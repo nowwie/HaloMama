@@ -22,7 +22,6 @@ class _LoginPageState extends State<LoginPage> {
         password: _passwordController.text,
       );
 
-      // Login sukses → pindah ke home/dashboard
       Navigator.pushReplacementNamed(context, '/home');
     } on FirebaseAuthException catch (e) {
       String message = '';
@@ -34,7 +33,6 @@ class _LoginPageState extends State<LoginPage> {
         message = e.message ?? 'Login failed';
       }
 
-      // Tampilkan error ke user
       showDialog(
         context: context,
         builder:
@@ -80,7 +78,6 @@ class _LoginPageState extends State<LoginPage> {
 
               SizedBox(height: MediaQuery.of(context).size.height * 0.03),
 
-              // Title
               Text(
                 "Welcome to HaloMama",
                 style: TextStyle(
@@ -103,7 +100,6 @@ class _LoginPageState extends State<LoginPage> {
 
               SizedBox(height: MediaQuery.of(context).size.height * 0.06),
 
-              // Email field
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -147,7 +143,6 @@ class _LoginPageState extends State<LoginPage> {
 
               const SizedBox(height: 16),
 
-              // Password field
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -225,7 +220,6 @@ class _LoginPageState extends State<LoginPage> {
 
               SizedBox(height: MediaQuery.of(context).size.height * 0.045),
 
-              // Register Button
               SizedBox(
                 width: double.infinity,
                 height: 50,
@@ -256,7 +250,6 @@ class _LoginPageState extends State<LoginPage> {
 
               SizedBox(height: MediaQuery.of(context).size.height * 0.03),
 
-              // Divider with text
               Row(
                 children: const [
                   Expanded(child: Divider(thickness: 1)),
@@ -270,7 +263,6 @@ class _LoginPageState extends State<LoginPage> {
 
               SizedBox(height: MediaQuery.of(context).size.height * 0.03),
 
-              // Google button
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.9,
                 height: 50,
@@ -293,7 +285,6 @@ class _LoginPageState extends State<LoginPage> {
 
               SizedBox(height: MediaQuery.of(context).size.height * 0.06),
 
-              // Footer
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

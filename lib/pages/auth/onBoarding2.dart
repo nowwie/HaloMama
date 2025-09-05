@@ -15,11 +15,10 @@ class OnboardingScreen2 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-              // Logo
+
               Image.asset('assets/images/logo.png', width: 60, height: 60),
               SizedBox(height: MediaQuery.of(context).size.height * 0.02),
 
-              // Ilustrasi
               Expanded(
                 child: Center(
                   child: Image.asset(
@@ -32,7 +31,6 @@ class OnboardingScreen2 extends StatelessWidget {
 
               SizedBox(height: MediaQuery.of(context).size.height * 0.02),
 
-              // Judul
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -49,7 +47,6 @@ class OnboardingScreen2 extends StatelessWidget {
 
               SizedBox(height: MediaQuery.of(context).size.height * 0.02),
 
-              // Deskripsi
               Text(
                 "Because you deserve to be asked, ‘How are you today?’ everyday.",
                 textAlign: TextAlign.left,
@@ -68,7 +65,6 @@ class OnboardingScreen2 extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  // Dot indicator
                   Row(
                     children: [
                       _buildDot(false),
@@ -77,7 +73,6 @@ class OnboardingScreen2 extends StatelessWidget {
                     ],
                   ),
 
-                  // Tombol Next
                   ElevatedButton(
                     onPressed: () {
                       Navigator.pushReplacementNamed(context, '/onboarding3');

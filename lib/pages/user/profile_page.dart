@@ -20,7 +20,6 @@ class ProfileScreen extends StatelessWidget {
           physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
-              // 🔹 Bagian header pink
               Container(
                 width: double.infinity,
                 height: h * 0.25,
@@ -52,9 +51,9 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
 
-              // 🔹 Card Profil (diturunkan dengan transform)
+            
               Transform.translate(
-                offset: Offset(0, -h * 0.08), // geser ke atas sedikit
+                offset: Offset(0, -h * 0.08), 
                 child: Card(
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                   elevation: 8,
@@ -73,7 +72,7 @@ class ProfileScreen extends StatelessWidget {
                         ),
                         SizedBox(height: h * 0.015),
 
-                        // 🔹 Nama & info user
+                        
                         Text(
                           user?.displayName ?? "No Name",
                           style: TextStyle(
@@ -88,7 +87,7 @@ class ProfileScreen extends StatelessWidget {
                         const Divider(),
                         SizedBox(height: h * 0.01),
 
-                        // 🔹 List Menu
+                     
                         ListTile(
                           contentPadding: EdgeInsets.zero,
                           leading: Icon(Icons.account_circle, color: Colors.black54, size: w * 0.065),
@@ -117,7 +116,7 @@ class ProfileScreen extends StatelessWidget {
                         ),
                         SizedBox(height: h * 0.02),
 
-                        // 🔹 Delete Account
+                       
                         ElevatedButton.icon(
                           onPressed: () {
                             showDialog(
@@ -140,7 +139,7 @@ class ProfileScreen extends StatelessWidget {
                         ),
                         SizedBox(height: h * 0.015),
 
-                        // 🔹 Logout
+                       
                         OutlinedButton(
                           onPressed: () {
                             showDialog(
@@ -163,7 +162,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height: h * 0.05), // kasih jarak biar gak nabrak
+              SizedBox(height: h * 0.05), 
             ],
           ),
         ),

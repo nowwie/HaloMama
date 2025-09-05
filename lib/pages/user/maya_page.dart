@@ -66,7 +66,7 @@ class _MayaPageState extends State<MayaPage> {
         ),
           if (_showIntro)
             SizedBox(
-              height: screenHeight * 0.5, // 2/4 dari layar
+              height: screenHeight * 0.5, 
               child: Center(
                 child: Padding(
                   padding: const EdgeInsets.all(24),
@@ -85,7 +85,7 @@ class _MayaPageState extends State<MayaPage> {
                       ),
                       const SizedBox(height: 20),
                       
-                      // Greeting message
+                     
                       Flexible(
                         flex: 1,
                         child: Container(
@@ -114,7 +114,7 @@ class _MayaPageState extends State<MayaPage> {
           // Chat messages area
           Expanded(
             child: (_showIntro || _isAnimating)
-                ? const SizedBox.shrink() // Kosong saat intro ditampilkan atau sedang animasi
+                ? const SizedBox.shrink() 
                 : ListView.builder(
                     padding: const EdgeInsets.all(16),
                     itemCount: _messages.length,
@@ -142,7 +142,7 @@ class _MayaPageState extends State<MayaPage> {
                   ),
           ),
 
-          // Mood options - ditampilkan di atas text field
+          
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             child: Row(
@@ -157,7 +157,7 @@ class _MayaPageState extends State<MayaPage> {
             ),
           ),
 
-          // Input chat
+         
           SafeArea(
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),

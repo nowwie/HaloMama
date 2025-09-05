@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/home',
+      initialRoute: '/splash',
 
       onGenerateRoute: (settings) {
     switch (settings.name) {
@@ -43,7 +43,6 @@ class MyApp extends StatelessWidget {
         return MaterialPageRoute(
           builder: (context) => ForgotPasswordReset(email: email),
         );
-      // ...route lain...
       default:
         return null;
     }},

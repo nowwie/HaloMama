@@ -40,16 +40,14 @@ class _ForgotPasswordResetState extends State<ForgotPasswordReset> {
   void _onSave() async {
   if (_isFormValid) {
     try {
-      // Update password user
       User? user = FirebaseAuth.instance.currentUser;
       if (user != null) {
         await user.updatePassword(_passwordController.text.trim());
       } else {
-        // Kalau pakai reset email
         await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
       }
 
-      // Tampilkan popup sukses
+  
       showDialog(
         context: context,
         barrierDismissible: false,
@@ -109,7 +107,7 @@ class _ForgotPasswordResetState extends State<ForgotPasswordReset> {
         child: Form(
           key: _formKey,
           onChanged: () {
-            setState(() {}); // Untuk update tombol save aktif/nonaktif
+            setState(() {}); 
           },
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

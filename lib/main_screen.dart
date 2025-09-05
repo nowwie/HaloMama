@@ -72,7 +72,6 @@ class _MainScreenState extends State<MainScreen> {
                     }).toList(),
               ),
             ),
-            // Floating center button
             Positioned(
               top: -20,
               left: 0,

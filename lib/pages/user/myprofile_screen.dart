@@ -79,7 +79,7 @@ class _MyAccountScreenState extends State<MyAccountScreen> {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                SizedBox(width: 56), // Balance the back button width
+                SizedBox(width: 56), 
               ],
             ),
           ),
@@ -126,7 +126,7 @@ class _MyAccountScreenState extends State<MyAccountScreen> {
                   const SizedBox(height: 10),
                   TextField(
                     controller: emailController,
-                    readOnly: true, // Email dari Firebase Auth biasanya tidak boleh diedit
+                    readOnly: true, 
                     decoration: InputDecoration(
                       labelText: 'Email',
                       border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),

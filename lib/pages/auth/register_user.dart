@@ -101,7 +101,7 @@ Future<void> _signInWithGoogle() async {
             children: [
               SizedBox(height: MediaQuery.of(context).size.height * 0.02),
 
-              // Logo
+
               Center(
                 child: Image.asset(
                   "assets/images/logo.png",
@@ -112,7 +112,6 @@ Future<void> _signInWithGoogle() async {
 
               SizedBox(height: MediaQuery.of(context).size.height * 0.045),
 
-              // Title
               Text(
                 "Welcome to HaloMama",
                 style: TextStyle(
@@ -135,7 +134,6 @@ Future<void> _signInWithGoogle() async {
 
               SizedBox(height: MediaQuery.of(context).size.height * 0.06),
 
-              // Name field
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -174,7 +172,6 @@ Future<void> _signInWithGoogle() async {
               ),
               const SizedBox(height: 16),
 
-              // Email field
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -213,7 +210,6 @@ Future<void> _signInWithGoogle() async {
               ),
               const SizedBox(height: 16),
 
-              // Password field
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -267,7 +263,6 @@ Future<void> _signInWithGoogle() async {
 
               SizedBox(height: MediaQuery.of(context).size.height * 0.045),
 
-              // Register Button
               SizedBox(
                 width: double.infinity,
                 height: 50,
@@ -298,7 +293,6 @@ Future<void> _signInWithGoogle() async {
 
               SizedBox(height: MediaQuery.of(context).size.height * 0.02),
 
-              // Divider with text
               Row(
                 children: const [
                   Expanded(child: Divider(thickness: 2)),
@@ -312,7 +306,6 @@ Future<void> _signInWithGoogle() async {
 
               SizedBox(height: MediaQuery.of(context).size.height * 0.02),
 
-              // Google button
               SizedBox(
                 width: double.infinity,
                 height: 50,
@@ -335,7 +328,6 @@ Future<void> _signInWithGoogle() async {
 
               SizedBox(height: MediaQuery.of(context).size.height * 0.06),
 
-              // Footer
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
