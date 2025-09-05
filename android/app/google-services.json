@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1011008802284",
+    "project_id": "halomama-a2c83",
+    "storage_bucket": "halomama-a2c83.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1011008802284:android:424949b16e84a6532fc4c9",
+        "android_client_info": {
+          "package_name": "com.example.halomama"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiBdtNToMwF5jm57w2OLhYPkLLosRX_So"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
