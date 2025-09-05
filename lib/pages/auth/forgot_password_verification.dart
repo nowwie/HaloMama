@@ -50,14 +50,12 @@ class _ForgotPasswordVerificationState
     setState(() => _isLoading = true);
 
     try {
-      // Kirim email reset password via Firebase
       await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
 
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Password reset email sent to $email')),
       );
 
-      // Navigasi ke halaman reset password
       Navigator.pushNamed(context, '/forgot_password_reset', arguments: email);
     } on FirebaseAuthException catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -68,8 +66,26 @@ class _ForgotPasswordVerificationState
     }
   }
 
-  void _onResend() {
-    _onContinue();
+  void _onResend() async {
+
+  if (email.isEmpty) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text("Please enter your email first.")),
+    );
+    return;
+  }
+
+  try {
+    await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text("Password reset link sent to $email")),
+    );
+  } catch (e) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text("Error: $e")),
+    );
+  }
   }
 
   @override
@@ -87,7 +103,7 @@ class _ForgotPasswordVerificationState
         child: Column(
           children: [
             const SizedBox(height: 20),
-            Image.asset('assets/email_verification.png', height: 120),
+            Image.asset('assets/images/pwverif.png', height: 120),
             const SizedBox(height: 20),
             const Text(
               "Verification Code Sent",

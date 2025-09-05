@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:halomama/components/constan.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 
 class RegisterPage extends StatefulWidget {
@@ -55,6 +56,38 @@ Future<void> _registerUser() async {
     );
   }
 }
+
+Future<void> _signInWithGoogle() async {
+  try {
+    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+    if (googleUser == null) {
+      // User batal pilih akun
+      return;
+    }
+
+    final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth.accessToken,
+      idToken: googleAuth.idToken,
+    );
+
+    // Login ke Firebase
+    UserCredential userCredential = await FirebaseAuth.instance.signInWithCredential(credential);
+
+    // Login sukses → navigasi
+    Navigator.pushReplacementNamed(context, '/home');
+  } on FirebaseAuthException catch (e) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Login gagal: ${e.message}')),
+    );
+  } catch (e) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Terjadi error: $e')),
+    );
+  }
+}
+
 
   @override
   Widget build(BuildContext context) {
@@ -284,7 +317,7 @@ Future<void> _registerUser() async {
                 width: double.infinity,
                 height: 50,
                 child: OutlinedButton.icon(
-                  onPressed: () {},
+                  onPressed: _signInWithGoogle,
                   icon: Image.asset(
                     "assets/images/google.png",
                     width: 24,

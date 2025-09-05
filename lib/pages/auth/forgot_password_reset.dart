@@ -55,8 +55,8 @@ class _ForgotPasswordResetState extends State<ForgotPasswordReset> {
         barrierDismissible: false,
         builder: (context) {
           Future.delayed(const Duration(seconds: 2), () {
-            Navigator.pop(context); // tutup popup
-            Navigator.popUntil(context, (route) => route.isFirst); // balik ke login
+            Navigator.pop(context); 
+            Navigator.popUntil(context, (route) => route.isFirst); 
           });
 
           return AlertDialog(
@@ -65,7 +65,7 @@ class _ForgotPasswordResetState extends State<ForgotPasswordReset> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Image.asset(
-                  "assets/success.png",
+                  "assets/images/verif.png",
                   width: 100,
                   height: 100,
                 ),

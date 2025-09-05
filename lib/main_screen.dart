@@ -4,6 +4,8 @@ import 'package:halomama/components/navbar.dart';
 import 'package:halomama/pages/user/activity_page.dart';
 import 'package:halomama/pages/user/dashboard.dart';
 import 'package:halomama/pages/user/maya_page.dart';
+import 'package:halomama/pages/user/profile_page.dart';
+import 'package:halomama/pages/user/report_page.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -34,8 +36,8 @@ class _MainScreenState extends State<MainScreen> {
     HomeContent(onChatNow: () => goToPage(2)),
     ActivityPage(),
     MayaPage(),
-    // ReportPage(),
-    // ProfilePage(),
+    ReportPage(),
+    ProfileScreen(),
   ];
 
   @override

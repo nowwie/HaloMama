@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:halomama/main_screen.dart';
+import 'package:halomama/pages/user/activity_page.dart';
+import 'package:halomama/pages/user/profile_page.dart';
 import 'firebase_options.dart';
 import 'package:halomama/pages/auth/forgot_password_reset.dart';
 import 'package:halomama/pages/auth/forgot_password_verification.dart';
@@ -27,7 +29,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/splash',
+      initialRoute: '/home',
 
       onGenerateRoute: (settings) {
     switch (settings.name) {
@@ -54,6 +56,8 @@ class MyApp extends StatelessWidget {
         '/login': (context)=> const LoginPage(),
         '/home': (context) => MainScreen(),
         '/maya': (context) => MayaPage(),
+        '/profile': (context) => ProfileScreen(),
+        '/activity': (context) => ActivityPage(),
       },
       
       
